@@ -27,8 +27,8 @@ from gi.repository import GLib, GObject, Notify
 from . import utils
 from .icons import empty_cup_icon, full_cup_icon
 from .inhibitors import DpmsInhibitor, GnomeInhibitor, XautolockInhibitor, \
-    XdgPowerManagmentInhibitor, XdgScreenSaverInhibitor, XorgInhibitor, \
-    XssInhibitor
+    XdgPowerManagmentInhibitor, XdgScreenSaverInhibitor, xfceInhibitor, \
+    XorgInhibitor, XssInhibitor
 
 # from pympler import tracker
 # tr = tracker.SummaryTracker()
@@ -52,7 +52,8 @@ class Caffeine(GObject.GObject):
             XssInhibitor(),
             DpmsInhibitor(),
             XorgInhibitor(),
-            XautolockInhibitor()
+            XautolockInhibitor(),
+            xfceInhibitor()
         ]
 
         self.__process_manager = process_manager
